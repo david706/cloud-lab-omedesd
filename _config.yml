@@ -2,6 +2,9 @@ title: Cloud Lab
 description: Portfolio técnico de 2.º ASIR
 lang: es
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 permalink: pretty
 student_name: Nombre Apellido
 student_group: 2.º ASIR

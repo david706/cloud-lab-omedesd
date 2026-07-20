@@ -9,3 +9,8 @@ Portfolio técnico con Markdown, Git, GitHub Pages y Tabler Icons.
 5. Guarda y consulta la URL publicada.
 
 El alumnado debe editar principalmente los archivos `.md` y la carpeta `imagenes/`.
+
+
+## Bloques visuales
+
+La sección **Datos técnicos** de `virtualizacion.md` utiliza tarjetas HTML preparadas. El alumnado solo debe sustituir los valores de ejemplo.
