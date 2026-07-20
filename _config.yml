@@ -8,7 +8,7 @@ kramdown:
 permalink: pretty
 student_name: David Omedes
 student_group: 2.º ASIR
-github_url: https://github.com/david706/cloud-lab-omedesd/
+github_url: https://github.com/david706/cloud-lab-omedesd
 progress: 30
 exclude:
   - README.md
