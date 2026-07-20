@@ -30,7 +30,7 @@ estado: en_progreso
 
 El alumno debe indicar aquí la última actualización relevante:
 
-- **Fecha:** DD/MM/AAAA
+- **Fecha:** 01/09/2026
 - **Último cambio:** Describir brevemente
 - **Último commit:** Copiar el identificador visible en GitHub
 
