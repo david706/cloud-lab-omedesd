@@ -1,56 +1,20 @@
 # Guía rápida del alumno
 
-## 1. Personaliza el proyecto
+## Editar
+Abre un `.md` en VS Code y pulsa `Ctrl + Shift + V` para ver la vista previa.
 
-Cambia:
-
-- Nombre y apellidos.
-- Inicial.
-- Nombre del repositorio.
-- Curso y grupo.
-- URL del repositorio.
-- Fecha de inicio.
-
-## 2. Crea tu repositorio
-
-Nombre recomendado:
-
-```text
-cloud-lab-apellido-inicial
-```
-
-No copies el repositorio de otro alumno.
-
-## 3. Conecta la carpeta con GitHub
-
-GitHub proporciona los comandos exactos al crear el repositorio.
-
-Debes completar:
-
+## Publicar
 ```bash
-git remote add origin URL_DE_TU_REPOSITORIO
-```
-
-## 4. Trabaja por hitos
-
-Cada hito debe incluir:
-
-- objetivo;
-- arquitectura;
-- procedimiento;
-- evidencias;
-- pruebas;
-- incidencias;
-- reflexión.
-
-## 5. Guarda el progreso
-
-Ejemplo:
-
-```bash
+git status
 git add .
-git commit -m "Documento el despliegue de Docker"
+git commit -m "Describe el cambio"
 git push
 ```
 
-La fecha del commit queda registrada automáticamente en GitHub.
+## Normas
+- Explica qué haces y por qué.
+- No pegues comandos sin explicación.
+- Cada captura debe demostrar algo.
+- Registra incidencias y soluciones.
+- Cita las fuentes.
+- Haz commits progresivos.
