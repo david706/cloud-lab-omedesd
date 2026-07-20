@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sesión 0 · Cloud Lab</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --surface: #fffdf8;
+      --surface-2: #eef4f1;
+      --text: #253238;
+      --muted: #617178;
+      --teal: #2f6f68;
+      --orange: #d97932;
+      --line: #d8ddd9;
+      --danger: #9c3d3d;
+      --shadow: 0 16px 40px rgba(38, 55, 61, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(217,121,50,.12), transparent 28rem),
+        linear-gradient(180deg, #edf3f0 0, var(--bg) 28rem);
+      line-height: 1.65;
+    }
+    a { color: var(--teal); }
+    code {
+      padding: .12rem .35rem;
+      border-radius: .35rem;
+      background: #edf0ee;
+      font-family: "Cascadia Code", Consolas, monospace;
+    }
+    pre {
+      overflow-x: auto;
+      padding: 1rem 1.1rem;
+      border-radius: .8rem;
+      color: #eef6f4;
+      background: #23343a;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+    }
+    pre code { padding: 0; color: inherit; background: transparent; }
+    .shell { width: min(1120px, calc(100% - 2rem)); margin: auto; }
+    header { padding: 4rem 0 3rem; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 2.2rem;
+      border: 1px solid rgba(47,111,104,.18);
+      border-radius: 1.5rem;
+      background: rgba(255,253,248,.88);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .eyebrow {
+      margin: 0 0 .5rem;
+      color: var(--orange);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+    h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 5.2rem); line-height: .98; }
+    .lead { max-width: 52rem; color: var(--muted); font-size: 1.12rem; }
+    .cloud {
+      display: grid;
+      place-items: center;
+      min-height: 220px;
+      border-radius: 1.2rem;
+      color: white;
+      background:
+        linear-gradient(145deg, rgba(47,111,104,.96), rgba(34,73,77,.96));
+      font-size: 5rem;
+      box-shadow: inset 0 0 60px rgba(255,255,255,.08);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-block: 1px solid var(--line);
+      background: rgba(255,253,248,.92);
+      backdrop-filter: blur(14px);
+    }
+    nav .shell {
+      display: flex;
+      gap: .5rem;
+      overflow-x: auto;
+      padding: .65rem 0;
+    }
+    nav a {
+      flex: 0 0 auto;
+      padding: .45rem .75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: .9rem;
+    }
+    nav a:hover { color: white; background: var(--teal); }
+    main { padding: 2rem 0 5rem; }
+    section { scroll-margin-top: 5rem; margin: 2rem 0; }
+    .card {
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(38,55,61,.06);
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    h2 { margin-top: 0; font-size: 2rem; }
+    h3 { margin-bottom: .35rem; }
+    .step {
+      position: relative;
+      padding-left: 3.3rem;
+    }
+    .step::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: grid;
+      place-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      color: white;
+      background: var(--teal);
+      font-weight: 800;
+    }
+    .tag {
+      display: inline-block;
+      margin: .15rem;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      color: #23423e;
+      background: #dcebe6;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+    .callout {
+      padding: 1rem 1.1rem;
+      border-left: 5px solid var(--orange);
+      border-radius: .7rem;
+      background: #fff4e8;
+    }
+    .warning {
+      border-left-color: var(--danger);
+      background: #faecec;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: .8rem;
+      background: white;
+    }
+    th, td { padding: .75rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: white; background: var(--teal); }
+    .checklist label {
+      display: block;
+      margin: .55rem 0;
+      padding: .7rem .8rem;
+      border-radius: .6rem;
+      background: var(--surface-2);
+    }
+    footer { padding: 2rem 0 4rem; color: var(--muted); text-align: center; }
+    @media (max-width: 780px) {
+      .hero, .grid, .grid-3 { grid-template-columns: 1fr; }
+      header { padding-top: 1rem; }
+    }
+    @media print {
+      nav { display: none; }
+      body { background: white; }
+      .card, .hero { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="shell">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Sesión 0 · Puesta en marcha</p>
+        <h1>Cloud Lab</h1>
+        <p class="lead">
+          Durante el curso construirás un único proyecto profesional. No entregarás una colección de prácticas aisladas:
+          diseñarás, desplegarás y documentarás una infraestructura de virtualización, contenedores, cloud e inteligencia artificial.
+        </p>
+        <span class="tag">GitHub</span>
+        <span class="tag">Markdown</span>
+        <span class="tag">MkDocs</span>
+        <span class="tag">Virtualización</span>
+        <span class="tag">Cloud</span>
+        <span class="tag">Docker</span>
+      </div>
+      <div class="cloud" aria-hidden="true">☁</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="shell">
+    <a href="#objetivo">Objetivo</a>
+    <a href="#repositorio">Repositorio</a>
+    <a href="#markdown">Markdown</a>
+    <a href="#estructura">Estructura</a>
+    <a href="#conexion">Conexión</a>
+    <a href="#git">Git</a>
+    <a href="#seguridad">Seguridad</a>
+    <a href="#reto">Reto final</a>
+  </div>
+</nav>
+
+<main class="shell">
+  <section id="objetivo" class="card">
+    <h2>1. ¿Qué vas a construir?</h2>
+    <div class="grid-3">
+      <div>
+        <h3>RA1 · Virtualización</h3>
+        <p>Crearás la infraestructura virtual que actuará como base del proyecto.</p>
+      </div>
+      <div>
+        <h3>RA3 · Contenedores</h3>
+        <p>Desplegarás servicios reproducibles mediante Docker y una plataforma de IA.</p>
+      </div>
+      <div>
+        <h3>RA2 · Cloud</h3>
+        <p>Ampliarás o sustituirás partes de la solución utilizando servicios cloud.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>Producto final:</strong> una arquitectura profesional documentada y justificada, no una memoria escrita al final del curso.
+    </div>
+  </section>
+
+  <section id="repositorio" class="card">
+    <h2>2. Tu repositorio personal</h2>
+    <p>Cada alumno utilizará un repositorio propio con este formato:</p>
+    <pre><code>cloud-lab-apellido-inicial</code></pre>
+    <p>Ejemplo:</p>
+    <pre><code>cloud-lab-garcia-j</code></pre>
+    <div class="grid">
+      <div class="step" data-step="1">
+        <h3>Recibe la plantilla</h3>
+        <p>Descarga y descomprime la plantilla común.</p>
+      </div>
+      <div class="step" data-step="2">
+        <h3>Personaliza</h3>
+        <p>Cambia nombre, grupo, URL y datos del proyecto.</p>
+      </div>
+      <div class="step" data-step="3">
+        <h3>Crea GitHub</h3>
+        <p>Crea un repositorio vacío en tu cuenta.</p>
+      </div>
+      <div class="step" data-step="4">
+        <h3>Conecta y sube</h3>
+        <p>Añade la URL remota y realiza tu primer push.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="markdown" class="card">
+    <h2>3. Markdown: escribir sencillo, publicar bonito</h2>
+    <p>Solo editarás archivos <code>.md</code>. MkDocs convertirá el contenido en una web ordenada y profesional.</p>
+    <div class="grid">
+      <div>
+        <h3>Lo que escribes</h3>
+        <pre><code># Despliegue de Docker
+
+## Objetivo
+
+Desplegar los servicios del proyecto.
+
+## Evidencia
+
+![Docker funcionando](imagenes/docker.png)
+
+```bash
+docker ps
+```</code></pre>
+      </div>
+      <div>
+        <h3>Lo que consigues</h3>
+        <p>Una página con títulos, navegación, imágenes, tablas, avisos, código resaltado y diseño adaptable.</p>
+        <div class="callout">
+          No necesitas escribir HTML ni diseñar la web.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="estructura" class="card">
+    <h2>4. El estándar Cloud Lab</h2>
+    <p>Todos los hitos siguen la misma estructura para facilitar el trabajo, la revisión y la evaluación.</p>
+    <table>
+      <thead>
+        <tr><th>Sección</th><th>Qué debes incluir</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Objetivo</td><td>Qué vas a construir y qué necesidad resuelve.</td></tr>
+        <tr><td>Datos de conexión</td><td>Equipo, IP o URL, puerto, usuario y método de acceso.</td></tr>
+        <tr><td>Arquitectura</td><td>Diagrama y explicación de los componentes.</td></tr>
+        <tr><td>Procedimiento</td><td>Pasos técnicos relevantes y decisiones.</td></tr>
+        <tr><td>Evidencias</td><td>Capturas, comandos, configuraciones y pruebas verificables.</td></tr>
+        <tr><td>Incidencias</td><td>Problema, diagnóstico y solución.</td></tr>
+        <tr><td>Reflexión</td><td>Aprendizaje, mejoras y aplicación profesional.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="conexion" class="card">
+    <h2>5. Datos de conexión</h2>
+    <p>En cada hito completarás una tabla parecida a esta:</p>
+    <table>
+      <thead><tr><th>Dato</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td>Equipo o servicio</td><td>Servidor Docker</td></tr>
+        <tr><td>IP o URL</td><td>192.168.50.25</td></tr>
+        <tr><td>Puerto</td><td>22 / 9443</td></tr>
+        <tr><td>Usuario</td><td>alumno</td></tr>
+        <tr><td>Método de acceso</td><td>SSH o interfaz web</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warning">
+      <strong>Nunca publiques:</strong> contraseñas, claves privadas, tokens, códigos de recuperación ni credenciales de AWS.
+    </div>
+  </section>
+
+  <section id="git" class="card">
+    <h2>6. Git y los commits</h2>
+    <p>Los commits registran la evolución real del proyecto. No se evaluará la cantidad, sino la coherencia del proceso.</p>
+    <pre><code>git init
+git add .
+git commit -m "Inicio de Cloud Lab"
+git branch -M main
+git remote add origin URL_DE_TU_REPOSITORIO
+git push -u origin main</code></pre>
+    <h3>Ejemplos de mensajes adecuados</h3>
+    <ul>
+      <li><code>Documento la red del laboratorio virtual</code></li>
+      <li><code>Añado pruebas del despliegue de Docker</code></li>
+      <li><code>Corrijo el diagrama de la arquitectura cloud</code></li>
+    </ul>
+    <p>GitHub mostrará automáticamente la fecha, la hora, el autor y el historial de cambios.</p>
+  </section>
+
+  <section id="seguridad" class="card">
+    <h2>7. Reglas de seguridad y calidad</h2>
+    <div class="checklist">
+      <label><input type="checkbox"> Las capturas deben ser legibles y tener una explicación.</label>
+      <label><input type="checkbox"> Las contraseñas y tokens deben estar ocultos.</label>
+      <label><input type="checkbox"> Los comandos importantes deben aparecer como bloques de código.</label>
+      <label><input type="checkbox"> Las fuentes consultadas deben quedar registradas.</label>
+      <label><input type="checkbox"> Cada incidencia debe incluir diagnóstico y solución.</label>
+      <label><input type="checkbox"> Cada commit debe representar un avance reconocible.</label>
+    </div>
+  </section>
+
+  <section id="reto" class="card">
+    <h2>8. Actividad de la Sesión 0</h2>
+    <ol>
+      <li>Descarga y descomprime la plantilla.</li>
+      <li>Renombra la carpeta con el formato indicado.</li>
+      <li>Cambia tus datos en la portada.</li>
+      <li>Crea tu repositorio vacío en GitHub.</li>
+      <li>Conecta la carpeta con tu repositorio.</li>
+      <li>Realiza el primer commit y el primer push.</li>
+      <li>Abre la documentación con MkDocs.</li>
+    </ol>
+    <pre><code>python -m pip install -r requirements.txt
+python -m mkdocs serve</code></pre>
+    <div class="callout">
+      <strong>Resultado esperado:</strong> tu página Cloud Lab funcionando en local y el repositorio publicado en GitHub.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell">
+    Cloud Lab · Sesión 0 · Virtualización de servidores, servicios y cloud computing
+  </div>
+</footer>
+</body>
+</html>

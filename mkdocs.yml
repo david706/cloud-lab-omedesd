@@ -1,0 +1,47 @@
+site_name: Cloud Lab · Apellido N.
+site_description: Proyecto profesional de virtualización, cloud, contenedores e IA
+site_author: Nombre Apellido
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Inicio: index.md
+  - Ficha del proyecto: ficha-proyecto.md
+  - Guía rápida de Markdown: guia-markdown.md
+  - Cuaderno de ingeniería: cuaderno-ingenieria.md
+  - RA1 · Virtualización:
+      - Presentación: ra1/index.md
+      - Hito 1 · Laboratorio virtual: ra1/hito1.md
+      - Hito 2 · CPD virtual: ra1/hito2.md
+  - RA2 · Cloud:
+      - Presentación: ra2/index.md
+      - Hito 3 · Servicios cloud: ra2/hito3.md
+      - Hito 4 · Automatización: ra2/hito4.md
+  - RA3 · Contenedores:
+      - Presentación: ra3/index.md
+      - Hito 5 · Docker: ra3/hito5.md
+      - Hito 6 · Servicio de IA: ra3/hito6.md
+  - Proyecto final:
+      - Caso profesional: proyecto/index.md
+      - Comparativa IaaS, PaaS y SaaS: proyecto/comparativa.md
+      - Decisión final: proyecto/decision.md
+  - Referencias: referencias.md
