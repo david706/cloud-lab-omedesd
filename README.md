@@ -1,13 +1,11 @@
-# Cloud Lab · GitHub Pages
-
-Portfolio técnico con Markdown, Git y GitHub Pages.
+# Cloud Lab Starter Kit V2
+Portfolio técnico con Markdown, Git, GitHub Pages y Tabler Icons.
 
 ## Publicación
-1. Crea un repositorio con estos archivos.
-2. Cambia en `_config.yml`: `student_name`, `student_group` y `github_url`.
-3. Abre **Settings → Pages**.
-4. En **Build and deployment** selecciona **Deploy from a branch**.
-5. Elige `main` y `/(root)`.
-6. Pulsa **Save**.
+1. Edita `_config.yml`.
+2. En GitHub abre **Settings → Pages**.
+3. Selecciona **Deploy from a branch**.
+4. Elige `main` y `/ (root)`.
+5. Guarda y consulta la URL publicada.
 
-El alumnado editará principalmente los `.md` y `imagenes/`.
+El alumnado debe editar principalmente los archivos `.md` y la carpeta `imagenes/`.

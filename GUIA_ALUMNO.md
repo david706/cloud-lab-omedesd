@@ -1,20 +1,14 @@
-# Guía rápida del alumno
-
+# Guía rápida
 ## Editar
-Abre un `.md` en VS Code y pulsa `Ctrl + Shift + V` para ver la vista previa.
-
+Abre un archivo `.md` en VS Code y usa `Ctrl + Shift + V` para la vista previa.
 ## Publicar
 ```bash
 git status
 git add .
-git commit -m "Describe el cambio"
+git commit -m "Documentado el hito de virtualización"
 git push
 ```
-
+## Archivos habituales
+`index.md`, `virtualizacion.md`, `contenedores.md`, `cloud.md`, `ia.md`, `referencias.md` e `imagenes/`.
 ## Normas
-- Explica qué haces y por qué.
-- No pegues comandos sin explicación.
-- Cada captura debe demostrar algo.
-- Registra incidencias y soluciones.
-- Cita las fuentes.
-- Haz commits progresivos.
+Explica decisiones, comenta capturas, registra incidencias y cita fuentes.

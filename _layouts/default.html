@@ -1,1 +1,43 @@
-<!doctype html><html lang="{{ site.lang | default: 'es' }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title><meta name="description" content="{{ page.description | default: site.description }}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"></head><body><a class="skip-link" href="#contenido">Saltar al contenido</a><header class="site-header"><div class="header-inner"><a class="brand" href="{{ '/' | relative_url }}"><span class="brand-mark">CL</span><span><strong>Cloud Lab</strong><small>Portfolio técnico</small></span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menú</button><nav id="main-nav" class="main-nav"><a href="{{ '/' | relative_url }}">Inicio</a><a href="{{ '/virtualizacion/' | relative_url }}">Virtualización</a><a href="{{ '/contenedores/' | relative_url }}">Contenedores</a><a href="{{ '/cloud/' | relative_url }}">Cloud</a><a href="{{ '/ia/' | relative_url }}">IA</a><a href="{{ '/referencias/' | relative_url }}">Referencias</a></nav></div></header><main id="contenido">{% if page.hero %}<section class="hero"><div class="hero-inner"><p class="eyebrow">Proyecto anual · AOP1090</p><h1>{{ site.title }}</h1><p class="hero-lead">Virtualización, contenedores, cloud e inteligencia artificial documentados paso a paso.</p><div class="student-card"><span class="avatar">{{ site.student_name | slice: 0 }}</span><span><strong>{{ site.student_name }}</strong><small>{{ site.student_group }}</small></span></div><div class="hero-actions"><a class="button primary" href="{{ '/virtualizacion/' | relative_url }}">Explorar el proyecto</a><a class="button secondary" href="{{ site.github_url }}">Ver repositorio</a></div></div></section>{% endif %}<div class="content-shell {% if page.hero %}home-content{% endif %}">{% unless page.hero %}<header class="page-heading"><p class="breadcrumb"><a href="{{ '/' | relative_url }}">Cloud Lab</a> / {{ page.title }}</p><h1>{{ page.title }}</h1>{% if page.description %}<p>{{ page.description }}</p>{% endif %}</header>{% endunless %}<article class="markdown-body">{{ content }}</article></div></main><footer class="site-footer"><div><strong>Cloud Lab</strong><span>{{ site.student_name }} · {{ site.student_group }}</span></div><p>Documentación creada con Markdown, Git y GitHub Pages.</p></footer><script src="{{ '/assets/js/site.js' | relative_url }}"></script></body></html>
+<!doctype html>
+<html lang="{{ site.lang | default: 'es' }}" data-theme="auto">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#content">Saltar al contenido</a>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="{{ '/' | relative_url }}"><span class="brand-symbol"><i class="ti ti-topology-star-3"></i></span><span><strong>Cloud Lab</strong><small>Portfolio técnico</small></span></a>
+<button class="menu" aria-expanded="false" aria-controls="nav"><i class="ti ti-menu-2"></i><span>Menú</span></button>
+<nav id="nav" class="nav">
+<a href="{{ '/' | relative_url }}"><i class="ti ti-layout-dashboard"></i>Inicio</a>
+<a href="{{ '/virtualizacion/' | relative_url }}"><i class="ti ti-server-2"></i>Virtualización</a>
+<a href="{{ '/contenedores/' | relative_url }}"><i class="ti ti-packages"></i>Contenedores</a>
+<a href="{{ '/cloud/' | relative_url }}"><i class="ti ti-topology-ring-3"></i>Cloud</a>
+<a href="{{ '/ia/' | relative_url }}"><i class="ti ti-cpu-2"></i>IA</a>
+<a href="{{ '/referencias/' | relative_url }}"><i class="ti ti-book-2"></i>Referencias</a>
+</nav>
+<button class="theme" aria-label="Cambiar tema"><i class="ti ti-moon-stars"></i></button>
+</div></header>
+<main id="content">
+{% if page.hero %}<section class="hero"><div class="hero-grid"><div>
+<p class="eyebrow"><i class="ti ti-git-branch"></i> Proyecto anual · AOP1090</p>
+<h1>Infraestructura,<br><span>documentada.</span></h1>
+<p class="lead">Un portfolio técnico vivo sobre virtualización, contenedores, cloud e inteligencia artificial.</p>
+<div class="student"><span class="avatar">{{ site.student_name | slice: 0 }}</span><div><strong>{{ site.student_name }}</strong><small>{{ site.student_group }}</small></div></div>
+<div class="actions"><a class="btn primary" href="{{ '/virtualizacion/' | relative_url }}"><i class="ti ti-arrow-up-right"></i>Explorar proyecto</a><a class="btn ghost" href="{{ site.github_url }}"><i class="ti ti-brand-github"></i>Repositorio</a></div>
+</div><div class="hero-console"><div class="console-head"><span></span><span></span><span></span><em>cloud-lab</em></div><div class="console-body"><p><b>$</b> git status</p><p class="muted">On branch main</p><p class="ok">✓ Portfolio sincronizado</p><p><b>$</b> progreso --mostrar</p><div class="mini-progress"><span style="width: {{ site.progress }}%"></span></div><p class="muted">{{ site.progress }}% completado</p></div></div></div></section>{% endif %}
+<div class="shell {% if page.hero %}home-shell{% endif %}">
+{% unless page.hero %}<header class="page-head"><p><a href="{{ '/' | relative_url }}">Cloud Lab</a><i class="ti ti-chevron-right"></i>{{ page.title }}</p><h1>{{ page.title }}</h1>{% if page.description %}<div>{{ page.description }}</div>{% endif %}</header>{% endunless %}
+<article class="content">{{ content }}</article>
+{% unless page.hero %}<nav class="pager"><a href="{{ '/' | relative_url }}"><i class="ti ti-arrow-left"></i>Volver al inicio</a><a href="#content">Subir<i class="ti ti-arrow-up"></i></a></nav>{% endunless %}
+</div></main>
+<footer><div><span class="footer-logo"><i class="ti ti-topology-star-3"></i></span><div><strong>Cloud Lab</strong><small>{{ site.student_name }} · {{ site.student_group }}</small></div></div><p><i class="ti ti-markdown"></i> Markdown <span>·</span> <i class="ti ti-git-branch"></i> Git <span>·</span> GitHub Pages</p></footer>
+<div class="lightbox" aria-hidden="true"><button aria-label="Cerrar"><i class="ti ti-x"></i></button><img alt="Vista ampliada"></div>
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body></html>

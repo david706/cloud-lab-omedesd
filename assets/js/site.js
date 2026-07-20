@@ -1,1 +1,7 @@
-const b=document.querySelector('.menu-button'),n=document.querySelector('.main-nav');if(b&&n)b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});
+const root=document.documentElement,themeBtn=document.querySelector('.theme'),menuBtn=document.querySelector('.menu'),nav=document.querySelector('.nav');
+const saved=localStorage.getItem('cloudlab-theme');if(saved)root.dataset.theme=saved;
+function icon(){const dark=root.dataset.theme==='dark';themeBtn.innerHTML=`<i class="ti ti-${dark?'sun':'moon-stars'}"></i>`}icon();
+themeBtn?.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('cloudlab-theme',root.dataset.theme);icon()});
+menuBtn?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open))});
+document.querySelectorAll('pre').forEach(pre=>{const b=document.createElement('button');b.className='copy-btn';b.innerHTML='<i class="ti ti-copy"></i>';b.title='Copiar comando';b.onclick=async()=>{await navigator.clipboard.writeText(pre.innerText);b.innerHTML='<i class="ti ti-check"></i>';setTimeout(()=>b.innerHTML='<i class="ti ti-copy"></i>',1200)};pre.appendChild(b)});
+const lb=document.querySelector('.lightbox'),lbimg=lb?.querySelector('img');document.querySelectorAll('.content img').forEach(img=>img.addEventListener('click',()=>{lbimg.src=img.src;lbimg.alt=img.alt;lb.classList.add('open');lb.setAttribute('aria-hidden','false')}));lb?.addEventListener('click',e=>{if(e.target===lb||e.target.closest('button')){lb.classList.remove('open');lb.setAttribute('aria-hidden','true')}});

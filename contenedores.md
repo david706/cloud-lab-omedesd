@@ -1,18 +1,15 @@
 ---
 layout: default
 title: Contenedores
-description: Despliegue y administración mediante Docker y Compose.
+description: Despliegue y administración de servicios mediante Docker y Compose.
 permalink: /contenedores/
 ---
-
 ## Objetivo
 Documenta el objetivo del hito.
-
 ## Servicios desplegados
 | Servicio | Imagen | Puerto | Estado |
 |---|---|---:|---|
 | Ejemplo | nginx:alpine | 8080 | Pendiente |
-
 ## Archivo Compose
 ```yaml
 services:
@@ -21,12 +18,9 @@ services:
     ports:
       - "8080:80"
 ```
-
 ## Evidencias
-Incluye capturas verificables y explícalas.
-
+Incluye capturas verificables y explica qué demuestra cada una.
 ## Incidencias y soluciones
-Anota los problemas importantes.
-
+Anota los problemas relevantes.
 ## Conclusiones
 Explica qué has aprendido.

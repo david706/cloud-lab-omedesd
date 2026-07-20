@@ -1,13 +1,11 @@
 ---
 layout: default
 title: Inteligencia artificial
-description: Despliegue y uso responsable de modelos de IA.
+description: Despliegue y uso responsable de modelos de IA en sistemas.
 permalink: /ia/
 ---
-
 ## Objetivo
-Explica el servicio de IA y su finalidad.
-
+Explica qué servicio de IA vas a desplegar y su finalidad.
 ## Modelo y entorno
 | Campo | Valor |
 |---|---|
@@ -15,17 +13,13 @@ Explica el servicio de IA y su finalidad.
 | Equipo | Pendiente |
 | Memoria | Pendiente |
 | Puerto | Pendiente |
-
-## Instalación y configuración
+## Instalación
 ```bash
 # Añade los comandos relevantes
 ```
-
 ## Pruebas
 Describe resultados y limitaciones.
-
 ## Uso responsable
-Explica las precauciones tomadas.
-
+Explica los datos utilizados y las precauciones.
 ## Conclusiones
 Resume los aprendizajes.

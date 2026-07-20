@@ -1,12 +1,12 @@
 title: Cloud Lab
 description: Portfolio técnico de 2.º ASIR
 lang: es
-theme: null
 markdown: kramdown
 permalink: pretty
 student_name: Nombre Apellido
 student_group: 2.º ASIR
 github_url: https://github.com/USUARIO/cloud-lab-apellido-inicial
+progress: 10
 exclude:
   - README.md
   - GUIA_ALUMNO.md
