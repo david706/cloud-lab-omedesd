@@ -6,9 +6,9 @@ kramdown:
   input: GFM
   hard_wrap: false
 permalink: pretty
-student_name: Nombre Apellido
+student_name: David Omedes
 student_group: 2.º ASIR
-github_url: https://github.com/USUARIO/cloud-lab-apellido-inicial
+github_url: https://github.com/davidof706/cloud-lab-omedesd
 progress: 10
 exclude:
   - README.md
