@@ -1,6 +1,6 @@
 ---
-alumno: Nombre Apellido
-repositorio: cloud-lab-apellido-inicial
+alumno: David Omedes
+repositorio: cloud-lab-apellido-omedesd
 estado: en_progreso
 ---
 
@@ -11,8 +11,8 @@ estado: en_progreso
 | Campo | Información |
 |---|---|
 | Alumno/a | Nombre Apellido |
-| Repositorio | `cloud-lab-apellido-inicial` |
-| URL de GitHub | `https://github.com/usuario/cloud-lab-apellido-inicial` |
+| Repositorio | `cloud-lab-omedesd` |
+| URL de GitHub | `https://github.com/usuario/cloud-lab-omedesd` |
 | Curso | 2.º ASIR |
 | Grupo | Completar |
 | Fecha de inicio | DD/MM/AAAA |
