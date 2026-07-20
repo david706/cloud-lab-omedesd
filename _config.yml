@@ -9,7 +9,7 @@ permalink: pretty
 student_name: David Omedes
 student_group: 2.º ASIR
 github_url: https://github.com/david706/cloud-lab-omedesd
-progress: 30
+progress: 20
 exclude:
   - README.md
   - GUIA_ALUMNO.md
